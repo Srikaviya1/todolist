@@ -1,0 +1,45 @@
+<style>
+   input{
+      border-color: black;
+      border-width: 2px;
+      border-style: solid;
+      color:blueviolet
+   }
+
+   button{
+      border-color: black;
+      border-width: 1px;
+      border-style: solid;
+      background-color:burlywood;
+      color: white;
+   }
+
+   li{
+      color:blueviolet
+   }
+</style>
+<input id="one">
+<button onclick="add()">Add</button>
+<ul id="list-container">
+   <li>Hello
+      <button onclick="deleteitem(event)">Delete</button>
+   </li>
+</ul>
+
+<script>
+   //select ul
+   var ul = document.getElementById("list-container")
+   //select input
+   var input = document.getElementById("one")
+   function add()
+   {
+      var listitem = document.createElement("li")
+      listitem.innerHTML=input.value + "<button onclick='deleteitem(event)''>Delete</button>"
+      ul.append(listitem)
+   }
+
+   function deleteitem(event)
+   {
+      event.target.parentElement.remove()
+   }
+</script>
